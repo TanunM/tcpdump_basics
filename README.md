@@ -46,6 +46,9 @@ Example packet:
 ```
 09:18:53.186955 eth0 In IP pnmaaa-an-in-f2.1e100.net.https > 192.168.0.128.35974: Flags [P.], seq 1:40, ack 39, win 1048, options [nop,nop,TS val 3951643436 ecr 157539099], length 39
 ```
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/packet_format.png'/>
+
 Explanation:
 * Timestamp (HH:MM:SS.microseconds): 09:18:53.186955
 * Network interface: eth0
@@ -73,22 +76,36 @@ Explanation:
 ```bash
 sudo tcpdump -i any -c 50 icmp
 ```
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/protocol.png'/>
+
 2. Based on host: Capture traffic related to a specific host:
 ```bash
 sudo tcpdump -i any -c 50 -nn host <host IP>
 ```
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/host.png'/>
+
 3. Based on port: Capture packets through a specific port:
 ```bash
 sudo tcpdump -i any -c 50 -nn port 80
 ```
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/port.png'/>
+
 4. Source IP address: Capture packets from a specific source IP:
 ```bash
 sudo tcpdump -i any -c 50 -nn src <source IP>
 ```
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/source.png'/>
+
 5. Complex expressions: Use and / or to combine conditions:
 ```bash
 sudo tcpdump -i any -c 5 -nn src <source IP> and port 443
 ```
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/complex.png'/>
 
 ## Step 5: Checking packet content
 To see packet content, tcpdump provides these flags:
@@ -106,6 +123,12 @@ Example:
 sudo tcpdump -i any -c 10 -nn -A port 80
 ```
 
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/read%20packet%201.png'/>
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/read%20packet%202.png'/>
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/read%20packet%203.png'/>
+
 ## Step 6: Saving captured packets
 1. Save packets to a file with -w:
 ```bash
@@ -116,6 +139,10 @@ sudo tcpdump -i any -c 10 -nn -w webserver.pcap
 ```bash
 tcpdump -nn -r webserver.pcap
 ```
+
+
+<img src='https://github.com/TanunM/tcpdump_basics/blob/main/gallery/write_read.png'/>
+
 4. You can also apply filters while reading to search for specific conditions.
 
 ## Troubleshooting
