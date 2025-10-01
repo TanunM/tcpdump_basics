@@ -56,7 +56,8 @@ Explanation:
 * Packet type: IPv4 → IP
 * Source host and port: pnmaaa-an-in-f2.1e100.net → Google server, .https → port 443 (HTTPS)
 * Destination IP and port: 192.168.0.128 → local machine IP, .35974 → port
-* Flags: Flags [P.] → PUSH flag, tells receiver to deliver buffered data immediately
+* Flags: Flags [P.] → PUSH flag, tells receiver to deliver buffered data immediately.
+
 | Flag	| Type | Symbol	| Description |
 |-------|-------|--------|-------------|
 | ACK	| Control	| .	| Acknowledges received data. |
